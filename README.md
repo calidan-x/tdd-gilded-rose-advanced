@@ -27,5 +27,40 @@
 	- 演出前5天，价值每天上升3点
 	- 一旦过了演出日，价值就马上变成0
 
+## 测试方案
+
+### Aged Brie
+Aged Brie 算法：MAX(Quality, MIN(Quality - SellIn, 50)) 
+ 
+|given| when| then|
+|---|---|---|
+|SellIn=11，Quality=10 , product='Aged Brie'| 计算商品价值 | 返回 10|
+|SellIn=-2，Quality=10 , product='Aged Brie'| 计算商品价值 | 返回 12|
+|SellIn=-41，Quality=10 , product='Aged Brie'| 计算商品价值 | 返回 50|
+
+### Sulfuras
+
+Sulfuras 算法：Quality
+
+|given| when| then|
+|---|---|---|
+|Quality=10 , product='Sulfuras'| 计算商品价值 | 返回 10|
+
+### Backstage Pass
+
+Backstage Pass 算法：
+
+
+|given| when| then|
+|---|---|---|
+|SellIn=11，Quality=10 , product='Backstage Pass'| 计算商品价值 | 返回 10|
+|SellIn=9，Quality=10 , product='Backstage Pass'| 计算商品价值 | 返回 10+2+2 = 14|
+|SellIn=5，Quality=10 , product='Backstage Pass'| 计算商品价值 | 返回 10+2+2+2+2+2+3=23|
+|SellIn=1，Quality=10 , product='Backstage Pass'| 计算商品价值 | 返回 10+2*5+3*5=35|
+|SellIn=0，Quality=10 , product='Backstage Pass'| 计算商品价值 | 返回 0|
+|SellIn=-1，Quality=10 , product='Backstage Pass'| 计算商品价值 | 返回 0|
+
+
+
 
 
