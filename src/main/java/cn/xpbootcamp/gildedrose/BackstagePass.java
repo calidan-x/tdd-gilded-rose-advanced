@@ -1,9 +1,5 @@
 package cn.xpbootcamp.gildedrose;
 
-
-/**
- * @author yin
- */
 public class BackstagePass extends Product {
 
     public BackstagePass(int quality, int sellIn) {
