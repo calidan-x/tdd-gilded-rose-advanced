@@ -2,18 +2,25 @@ package cn.xpbootcamp.gildedrose;
 
 public class BackstagePass extends Product {
 
-    public BackstagePass(int quality, int sellIn) {
+    public BackstagePass(int sellIn, int quality) {
+        super(sellIn, quality);
+    }
 
-        if (sellIn > 10) {
-            this.quality = quality;
-        } else if (sellIn <= 10 && sellIn > 5) {
-            this.quality = quality + 2 * (10 - sellIn + 1);
-        } else if (sellIn <= 5 && sellIn > 0) {
-            this.quality = quality + 10 + 3 * (5 - sellIn + 1);
+    @Override
+    public int getQuality() {
+        int calcQuality = quality;
+        int actualSellIn = getSellIn();
+        if (actualSellIn >= 10) {
+            calcQuality = quality + dayPass;
+        } else if (actualSellIn < 10 && actualSellIn >= 5) {
+            calcQuality = quality + Math.max(0, sellIn - 10) + 2 * Math.min(dayPass, (10 - actualSellIn));
+        } else if (actualSellIn < 5 && actualSellIn >= 0) {
+            calcQuality = quality + Math.max(0, sellIn - 10) + 2 * Math.max(Math.min(5, sellIn - 5), 0)
+                    + 3 * Math.min(dayPass, 5 - actualSellIn);
         } else {
-            this.quality = 0;
+            calcQuality = 0;
         }
-        this.sellIn = sellIn;
+        return Math.min(calcQuality, 50);
     }
 
 }
