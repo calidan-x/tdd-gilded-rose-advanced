@@ -3,6 +3,7 @@ package cn.xpbootcamp.gildedrose;
 abstract public class AbstractProduct {
 
     public final int MAX_QUALITY = 50;
+    public final int MIN_QUALITY = 0;
 
     // 商品距离过期的天数
     protected int sellIn;

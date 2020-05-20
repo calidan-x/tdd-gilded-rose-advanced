@@ -1,6 +1,6 @@
 package cn.xpbootcamp.gildedrose;
 
-public class BackstagePass extends Product {
+public class BackstagePass extends AbstractProduct {
 
     public BackstagePass(int sellIn, int quality) {
         super(sellIn, quality);
@@ -18,7 +18,7 @@ public class BackstagePass extends Product {
             calcQuality = quality + Math.max(0, sellIn - 10) + 2 * Math.max(Math.min(5, sellIn - 5), 0)
                     + 3 * Math.min(dayPass, 5 - actualSellIn);
         } else {
-            calcQuality = 0;
+            calcQuality = MIN_QUALITY;
         }
         return Math.min(calcQuality, 50);
     }
