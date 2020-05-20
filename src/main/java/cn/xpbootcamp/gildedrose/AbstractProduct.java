@@ -1,6 +1,6 @@
 package cn.xpbootcamp.gildedrose;
 
-abstract public class Product {
+abstract public class AbstractProduct {
 
     public final int MAX_QUALITY = 50;
 
@@ -13,7 +13,7 @@ abstract public class Product {
     // 经过时间
     protected int dayPass;
 
-    public Product(int sellIn, int quality) {
+    public AbstractProduct(int sellIn, int quality) {
         this.sellIn = sellIn;
         this.quality = quality;
     }

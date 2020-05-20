@@ -1,6 +1,6 @@
 package cn.xpbootcamp.gildedrose;
 
-public class Sulfuras extends Product {
+public class Sulfuras extends AbstractProduct {
     public Sulfuras(int sellIn, int quality) {
         super(sellIn, quality);
     }

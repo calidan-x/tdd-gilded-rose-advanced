@@ -1,6 +1,6 @@
 package cn.xpbootcamp.gildedrose;
 
-public class AgedBrie extends Product {
+public class AgedBrie extends AbstractProduct {
 
     public AgedBrie(int sellIn, int quality) {
         super(sellIn, quality);
