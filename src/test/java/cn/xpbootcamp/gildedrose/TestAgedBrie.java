@@ -1,16 +1,10 @@
 package cn.xpbootcamp.gildedrose;
 
-import org.junit.Assert;
 import org.junit.Test;
 
-public class TestAgedBrie {
+public class TestAgedBrie extends TestBase {
 
-    public void assertSellInAndQuality(Product product, int sellIn, int quality) {
-        Assert.assertEquals(sellIn, product.getSellIn());
-        Assert.assertEquals(quality, product.getQuality());
-    }
-
-    public AgedBrie buildAgedBrie(int sellIn, int quality, int dayPass) {
+    public AgedBrie setupAgedBrie(int sellIn, int quality, int dayPass) {
         AgedBrie agedBrie = new AgedBrie(sellIn, quality);
         agedBrie.passDay(dayPass);
         return agedBrie;
@@ -18,31 +12,31 @@ public class TestAgedBrie {
 
     @Test
     public void should_calc_agedbrie_when_sellin2_quality0_daypass1() {
-        AgedBrie agedBrie = buildAgedBrie(2, 0, 1);
+        AgedBrie agedBrie = setupAgedBrie(2, 0, 1);
         assertSellInAndQuality(agedBrie, 1, 1);
     }
 
     @Test
     public void should_calc_agedbrie_when_sellin2_quality49_daypass1() {
-        AgedBrie agedBrie = buildAgedBrie(2, 49, 1);
+        AgedBrie agedBrie = setupAgedBrie(2, 49, 1);
         assertSellInAndQuality(agedBrie, 1, 50);
     }
 
     @Test
     public void should_calc_agedbrie_when_sellin2_quality50_daypass1() {
-        AgedBrie agedBrie = buildAgedBrie(2, 50, 1);
+        AgedBrie agedBrie = setupAgedBrie(2, 50, 1);
         assertSellInAndQuality(agedBrie, 1, 50);
     }
 
     @Test
     public void should_calc_agedbrie_when_sellin0_quality20_daypass1() {
-        AgedBrie agedBrie = buildAgedBrie(0, 20, 1);
+        AgedBrie agedBrie = setupAgedBrie(0, 20, 1);
         assertSellInAndQuality(agedBrie, -1, 22);
     }
 
     @Test
     public void should_calc_agedbrie_when_sellinm1_quality20_daypass1() {
-        AgedBrie agedBrie = buildAgedBrie(-1, 20, 1);
+        AgedBrie agedBrie = setupAgedBrie(-1, 20, 1);
         assertSellInAndQuality(agedBrie, -2, 22);
     }
 }
