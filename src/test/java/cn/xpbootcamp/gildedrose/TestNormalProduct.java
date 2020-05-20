@@ -29,25 +29,25 @@ public class TestNormalProduct {
     }
 
     @Test
-    public void test_normal_product_sellin3_quality6_daypass1() {
+    public void should_calc_normal_product_when_sellin3_quality6_daypass1() {
         NormalProduct normalProduct = buildNormalProduct(3, 6, 1);
         assertSellInAndQuality(normalProduct, 2, 5);
     }
 
     @Test
-    public void test_normal_product_sellin3_quality51_daypass1() {
+    public void should_calc_normal_product_when_sellin3_quality51_daypass1() {
         NormalProduct normalProduct = buildNormalProduct(3, 51, 1);
         assertSellInAndQuality(normalProduct, 2, 50);
     }
 
     @Test
-    public void test_normal_product_sellin0_quality6_daypass1() {
+    public void should_calc_normal_product_when_sellin0_quality6_daypass1() {
         NormalProduct normalProduct = buildNormalProduct(0, 6, 1);
         assertSellInAndQuality(normalProduct, -1, 4);
     }
 
     @Test
-    public void test_normal_product_sellinm1_quality6_daypass1() {
+    public void should_calc_normal_product_when_sellinm1_quality6_daypass1() {
         NormalProduct normalProduct = buildNormalProduct(-1, 6, 1);
         assertSellInAndQuality(normalProduct, -2, 4);
     }

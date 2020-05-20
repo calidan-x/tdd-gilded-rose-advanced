@@ -17,31 +17,31 @@ public class TestAgedBrie {
     }
 
     @Test
-    public void test_agedbrie_pass_sellin2_quality0_daypass1() {
+    public void should_calc_agedbrie_when_sellin2_quality0_daypass1() {
         AgedBrie agedBrie = buildAgedBrie(2, 0, 1);
         assertSellInAndQuality(agedBrie, 1, 1);
     }
 
     @Test
-    public void test_agedbrie_pass_sellin2_quality49_daypass1() {
+    public void should_calc_agedbrie_when_sellin2_quality49_daypass1() {
         AgedBrie agedBrie = buildAgedBrie(2, 49, 1);
         assertSellInAndQuality(agedBrie, 1, 50);
     }
 
     @Test
-    public void test_agedbrie_pass_sellin2_quality50_daypass1() {
+    public void should_calc_agedbrie_when_sellin2_quality50_daypass1() {
         AgedBrie agedBrie = buildAgedBrie(2, 50, 1);
         assertSellInAndQuality(agedBrie, 1, 50);
     }
 
     @Test
-    public void test_agedbrie_pass_sellin0_quality20_daypass1() {
+    public void should_calc_agedbrie_when_sellin0_quality20_daypass1() {
         AgedBrie agedBrie = buildAgedBrie(0, 20, 1);
         assertSellInAndQuality(agedBrie, -1, 22);
     }
 
     @Test
-    public void test_agedbrie_pass_sellinm1_quality20_daypass1() {
+    public void should_calc_agedbrie_when_sellinm1_quality20_daypass1() {
         AgedBrie agedBrie = buildAgedBrie(-1, 20, 1);
         assertSellInAndQuality(agedBrie, -2, 22);
     }
